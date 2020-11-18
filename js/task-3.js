@@ -15,3 +15,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const gallery = document.getElementById('gallery');
+
+gallery.style.display = 'flex';
+gallery.style.justifyContent = 'space-around';
+
+const createGallery = ({ url, alt }) =>
+  `<li><img src = ${url} alt=${alt} width="300"></li>`;
+const galleryList = images.map(createGallery).join('');
+gallery.insertAdjacentHTML('afterbegin', galleryList);
